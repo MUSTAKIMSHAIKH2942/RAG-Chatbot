@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RAG Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>💬 RAG Chatbot</h1>
+        <form method="POST">
+            <input type="text" name="query" placeholder="Ask something..." value="{{ query or '' }}" required>
+            <button type="submit">Ask</button>
+        </form>
+        {% if response %}
+            <div class="response-box">
+                <h3>🤖 Response:</h3>
+                <p>{{ response }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
